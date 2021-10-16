@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.wav
+__MACOSX/
+*.DS_Store
+
 # C extensions
 *.so
 
