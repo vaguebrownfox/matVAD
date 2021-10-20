@@ -9,7 +9,7 @@ function res = eval_con(con_files)
        
        stim = t{end - 2};
        
-       count  = spot_freq(fpath, false);
+       count  = spot_freq(fpath, true);
        
        
        con_res.(stim) = count;
