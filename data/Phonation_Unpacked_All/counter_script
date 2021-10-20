@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+root_folder=$1
+ 
+echo "counting inside $root_folder"
+
+declare -a QRY=("Exhale" "Cough" "Aaa" "Eee" "Ooo" "Uuu" "Sss" "Zzz" "Yee")
+
+function count {
+	ls -l $root_folder/$1 | wc -l
+}
+
+function count_for {
+	echo ---
+	echo "counting for $2"
+	for j in "${QRY[@]}" do
+		echo "$j : $(count "*$1*${j}*")"
+	done
+}
+
+# 1. fname pattern; 2. description
+declare -a TYPS=("_P_" "patient" \
+		 "_C_" "control" \
+		 "_M_" "male" \
+		 "_F_" "female" \
+	 	)
+
+for ((i = 0; i < ${#TYPS[@]}; i+=2)) do
+	count_for "${TYPS[$i]}" "${TYPS[$i+1]}"
+done
+
