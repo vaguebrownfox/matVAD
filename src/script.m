@@ -18,6 +18,5 @@ for i=1:numel(cons)
    con_files = all_cons_data.(con_id);
 
    con_res = eval_con(con_files);
-   
    results.(con_id) = con_res;
 end
