@@ -21,6 +21,7 @@ for i=1:numel(cons)
 end
 
 disp(results);
+writestruct(results, result_folder_path);
 
 
 
