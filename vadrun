@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+IMAGE="vadx0b:latest"
+HOST_DATA_DIR="/home/darwin/Desktop/SPIRE_Lab/Asquire/VAD/matVAD_dockerx2/asquire_data"
+CONT_DATA_DIR="/home/matlab/Documents/MATLAB/matVad/asquire_data"
+
+docker run -it --rm \
+--name "asquire_vad" \
+-e MLM_LICENSE_FILE=/license.lic \
+--shm-size=512M \
+-v \
+$HOST_DATA_DIR:$CONT_DATA_DIR \
+$IMAGE
