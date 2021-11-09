@@ -1,6 +1,7 @@
 addpath fx/ vad/
-root_data_path = "/home/matlab/Documents/MATLAB/matVad/asquire_data/week_data/";
-result_folder_path = "/home/matlab/Documents/MATLAB/matVad/asquire_data/results/results.xml";
+host_data_folder = "/home/matlab/Documents/MATLAB/matVad/asquire_data/";
+root_data_path = fullfile(host_data_folder,'week_data');
+result_folder_path = fullfile(host_data_folder,'results');
 
 close all;
 data_folders = list_files(root_data_path);
